@@ -14,8 +14,9 @@ func main() {
 	logger := NewLogger()
 	logger.Info("App started")
 	cfg := config.LoadConfig()
-	db.InitDB(cfg)
-	repository := db.NewPostgresUserRepository()
+
+	repository := db.NewDB(cfg)
+	defer repository.DB.Close()
 
 	useCase := createuser.NewUserUseCase(repository)
 

@@ -6,10 +6,10 @@ type RequestResPayload struct {
 }
 
 type User struct {
-	ID        int    `gorm:"primary_key" json:"id"`
-	Email     string `gorm:"unique;not null" json:"email"`
-	FirstName string `gorm:"not null" json:"first_name"`
-	LastName  string `gorm:"not null" json:"last_name"`
+	ID        int    `json:"id"`
+	Email     string `json:"email"`
+	FirstName string `json:"first_name"`
+	LastName  string `json:"last_name"`
 	Avatar    string `json:"avatar"`
 }
 
